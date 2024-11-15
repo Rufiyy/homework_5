@@ -1,5 +1,9 @@
 /// Email checker
 
+
+
+
+
 const gmailInput = document.querySelector("#gmail_input")
 const gmailButton = document.querySelector("#gmail_button");
 const gmailResult = document.querySelector("#gmail_result");
@@ -65,8 +69,7 @@ function moveBlock() {
 }
 
 
-moveBlock();
-
+setInterval(() => moveBlock(),0)
 
 
 
@@ -112,4 +115,43 @@ function resetTimer() {
 }
 
 updateDisplay();
+
+const characters = document.querySelector("#characters")
+
+console.log(characters)
+
+const request = new XMLHttpRequest();
+request.open("GET", "../data/persons.json");
+request.setRequestHeader("Content-type", "application/json");
+request.responseType = "json";
+request.send()
+
+const renderCharacterList = (data) =>{
+    data.forEach((character) => {
+        const characterCard = document.createElement("div");
+        characterCard.classList.add("character-card");
+
+        const characterImage = document.createElement("img");
+        characterImage.setAttribute("src",character.image)
+
+        const characterName = document.createElement("p");
+        characterName.innerText = character.name;
+        const characterAge = document.createElement("span");
+        characterAge.innerText = character.age
+
+        characterCard.append(characterImage);
+        characterCard.append(characterName);
+        characterCard.append(characterAge);
+
+        characters.append(characterCard)
+    })
+}
+
+request.onload = () =>{
+    const data = request.response;
+    console.log(data)
+    renderCharacterList(data)
+}
+
+
 

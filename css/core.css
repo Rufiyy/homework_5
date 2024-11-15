@@ -19,9 +19,9 @@ body {
     height: 50px;
     font-size: 20px;
     cursor: pointer;
-    border: 1px solid var(--orange);
+    border: 1px solid pink;
     background: black;
-    color: var(--orange);
+    color: pink;
     border-radius: 8px;
 }
 
@@ -31,7 +31,7 @@ body {
 
 .btn:active {
     background: #56585D;
-    border: 2px solid var(--orange);
+    border: 2px solid pink;
 }
 
 a {
@@ -120,6 +120,6 @@ input {
 }
 
 :root {
-    --orange: orange;
+    --orange: pink;
     --black: black;
 }

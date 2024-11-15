@@ -204,21 +204,21 @@
     transform: scale(120%);
     transition:.6s;
     color: black;
-    background:linear-gradient(green,limegreen);
+    background: #368571;
     border: black;
 }
 #stop:hover{
     transform: scale(120%);
     transition: .6s;
     color: black;
-    background:linear-gradient(yellow,greenyellow);
+    background: #368571;
     border: black;
 }
 #reset:hover{
     transform: scale(120%);
     transition: .6s;
     color: black;
-    background:linear-gradient(red,indianred);
+background: #368571;
     border: black;
 
 }
@@ -245,6 +245,10 @@
     flex-direction: column;
     gap: 10px;
     text-align: center;
+}
+
+.character-card p, .character-card span {
+    color: var(--orange);
 }
 
 .character-photo {
